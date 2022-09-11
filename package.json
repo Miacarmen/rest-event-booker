@@ -1,0 +1,33 @@
+{
+  "name": "rest-event-booker",
+  "version": "1.0.0",
+  "description": "Event Booker created with REST API and React",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miacarmen/rest-event-booker.git"
+  },
+  "keywords": [
+    "events",
+    "activities",
+    "couples",
+    "romantic",
+    "fun"
+  ],
+  "author": "Mia Carmen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Miacarmen/rest-event-booker/issues"
+  },
+  "homepage": "https://github.com/Miacarmen/rest-event-booker#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
