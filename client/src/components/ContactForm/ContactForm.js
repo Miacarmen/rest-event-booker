@@ -4,10 +4,10 @@
 
 import React from 'react'
 
-const Contact = () => {
+const ContactForm = () => {
   return (
-    <div>Contact</div>
+    <div>ContactForm</div>
   )
 }
 
-export default Contact
+export default ContactForm

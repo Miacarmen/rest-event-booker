@@ -9,7 +9,7 @@ module.exports = {
         mytheme: {
           primary: '#D926A9',
 
-          'primary-focus': '#ff77e9',
+          // 'primary-focus': '#ff77e9',
 
           secondary: '#ff77e9',
 

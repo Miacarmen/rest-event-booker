@@ -1,33 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-daisyui';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import './nav.styles.css';
+// TO-DO: change color of current nav tab
+
+// TO-DO: if user not logged in, display login button
+// if they are logged in, display logout button
 
 const Nav = () => {
   return (
-    <div class='navbar bg-base-200 px-4'>
+    <div className='navbar bg-base-200 px-4'>
       <div className='navbar-start'>
-        <p class='text-xl'>Logo</p>
+        <p className='text-xl'>Logo</p>
       </div>
       <div className='navbar-center'>
         <div className='md:flex items-stretch space-x-3 font-medium '>
-          <Link to='/' className='hover:text-accent-focus'>
+          <NavLink to='/' className='navLink hover:text-secondary'>
             Home
-          </Link>
-          <Link to='/events' className='hover:text-accent-focus'>
+          </NavLink>
+          <NavLink to='/events' className='navLink hover:text-secondary'>
             Events
-          </Link>
-          <Link to='/dash' className='hover:text-accent-focus'>
+          </NavLink>
+          <NavLink to='/dash' className='navLink hover:text-secondary'>
             Dashboard
-          </Link>
-          <Link to='/contact' className='hover:text-accent-focus'>
+          </NavLink>
+          <NavLink to='/contact' className='navLink hover:text-secondary'>
             Contact
-          </Link>
+          </NavLink>
         </div>
       </div>
       <div className='navbar-end'>
-        <Button class='px-2 py-1 rounded-full bg-accent hover:bg-accent-focus text-base-200'>
+        <div className='btn btn-sm px-2 rounded-full bg-neutral hover:bg-neutral-focus '>
           Login
-        </Button>
+        </div>
       </div>
     </div>
   );

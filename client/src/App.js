@@ -4,6 +4,7 @@ import './App.css';
 
 // Pages
 import Nav from './components/Navigation/Navbar';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import Events from './pages/Events';
 
@@ -19,7 +20,7 @@ function App() {
             <Route path='*' element={<p>Page Not Found</p>} />
           </Routes>
         {/* </div> */}
-        
+        <Footer />
       </Router>
     </>
   );
