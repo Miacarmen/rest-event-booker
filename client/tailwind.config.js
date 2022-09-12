@@ -7,19 +7,27 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: '#6419E6',
+          primary: '#D926A9',
 
-          secondary: '#D926A9',
+          'primary-focus': '#ff77e9',
+
+          secondary: '#ff77e9',
 
           accent: '#1FB2A6',
 
-          neutral: '#191D24',
+          'accent-focus': '#3ab7bf',
+
+          neutral: '#3730a3',
 
           'base-100': '#2A303C',
 
+          'base-200': '#191D24',
+
+          'base-300': '#ffffff',
+
           info: '#3ABFF8',
 
-          success: '#36D399',
+          success: '#78dcca',
 
           warning: '#FBBD23',
 
@@ -29,18 +37,7 @@ module.exports = {
     ],
   },
   theme: {
-    colors: {
-      // transparent: 'transparent',
-      // current: 'currentColor',
-      white: '#ffffff',
-      purple: '#3f3cbb',
-      midnight: '#312e81',
-      metal: '#565584',
-      tahiti: '#3ab7bf',
-      silver: '#ecebff',
-      'bubble-gum': '#ff77e9',
-      bermuda: '#78dcca',
-    },
+    colors: {},
     extend: {},
   },
   plugins: [require('daisyui')],

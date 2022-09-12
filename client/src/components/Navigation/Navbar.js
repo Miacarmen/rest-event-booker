@@ -4,7 +4,7 @@ import { Button } from 'react-daisyui';
 
 const Nav = () => {
   return (
-    <div class='navbar bg-base-100 px-4'>
+    <div class='navbar bg-base-200 px-4'>
       <div className='navbar-start'>
         <p class='text-xl'>Logo</p>
       </div>
@@ -25,7 +25,7 @@ const Nav = () => {
         </div>
       </div>
       <div className='navbar-end'>
-        <Button class='px-2 py-1 rounded-full bg-tahiti hover:bg-accent text-base-100'>
+        <Button class='px-2 py-1 rounded-full bg-accent hover:bg-accent-focus text-base-200'>
           Login
         </Button>
       </div>

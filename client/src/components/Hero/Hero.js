@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div class='hero min-h-screen bg-neutral'>
+    <div class='hero min-h-screen bg-base-100'>
       <div class='hero-content text-center'>
         <div class='max-w-md'>
           <h1 class='text-5xl font-bold'>Hello there</h1>
@@ -11,7 +11,7 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button class='btn rounded-full bg-bubble-gum text-base-100 hover:bg-secondary'>Get Started</button>
+          <button class='btn rounded-full bg-primary text-base-100 hover:bg-primary-focus'>Get Started</button>
         </div>
       </div>
     </div>
