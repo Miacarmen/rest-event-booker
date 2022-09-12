@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
@@ -9,15 +10,13 @@ const PORT = process.env.PORT || 4000;
 // Middleware for parsing json data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(routes);
 // if we're in production, serve client/build as static assets
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(path.join(__dirname, '../client/build')));
 // }
 
-
 // Routes
-app.use(routes);
 // send the index.html file always
 // app.get('/*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));

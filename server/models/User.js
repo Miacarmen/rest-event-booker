@@ -36,10 +36,11 @@ const userSchema = new Schema(
       required: true,
       mingLength: 8,
     },
-    reservations: [
+    // array of `_id` values referencing the `User` model (self-reference)
+    eventsBooked: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Event',
+        ref: 'User',
       },
     ],
   },
@@ -48,7 +49,6 @@ const userSchema = new Schema(
     toJSON: {
       virtuals: true,
     },
-    id: false,
   }
 );
 
@@ -78,6 +78,13 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
+
+userSchema
+  .virtual('eventsBookedCount')
+  // retrieve length of user's `reservations` array field on query
+  .get(function () {
+    return this.eventsBooked.length;
+  });
 
 // Initialize our User model
 const User = model('User', userSchema);
