@@ -11,25 +11,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
 
-// app.use(routes);
 
 // Routes
+app.use(routes);
 // send the index.html file always
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
-// Start Node + Express server on Port 4000
-// db.once('open', () => {
-//   app.listen(PORT, () => {
-//     console.log(`App running on localhost: ${PORT}`);
-//   });
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 // });
 
-app.listen(PORT, () => {
-  console.log(`App running on localhost: ${PORT}`);
+// Start Node + Express server on Port 4000
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`App running on localhost: ${PORT}`);
+  });
 });
+
+// app.listen(PORT, () => {
+//   console.log(`App running on localhost: ${PORT}`);
+// });
