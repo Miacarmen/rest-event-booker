@@ -1,0 +1,14 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    margin: auto;
+    /* padding-bottom: 60px; */
+  }
