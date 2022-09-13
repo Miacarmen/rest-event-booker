@@ -43,10 +43,13 @@ Full MERN stack application created to explore and book events and activities fo
 
 ## Dependencies
 - [mongoose](https://www.npmjs.com/package/mongoose)
-- [react daisyUI](https://react.daisyui.com/?path=/story/welcome--page)
-- [daisyUI](https://daisyui.com/)
 - [Concurrently](https://www.npmjs.com/package/concurrently)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [uuid](https://www.npmjs.com/package/uuid)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [react daisyUI](https://react.daisyui.com/?path=/story/welcome--page)
+- [daisyUI](https://daisyui.com/)
 - [Sweetalert](https://www.npmjs.com/package/sweetalert)
 
 
