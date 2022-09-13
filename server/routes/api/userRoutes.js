@@ -4,27 +4,36 @@ const {
   getUsers,
   getSingleUser,
   createUser,
+  loginUser,
   updateUser,
   deleteUser,
   cancelReservation,
 } = require('../../controllers/userControllers');
 
+
 // ROUTES
 
 // GET all users
-// CREATE new user
 // /api/users
-router.route('/').get(getUsers).post(createUser);
+router.route('/').get(getUsers);
+// router.get('/', getUsers);
 
-// GET, UPDATE, DELETE user by ID
+// CREATE new user
+// router.route('/signup').post(createUser);
+router.post('/signup', createUser);
+
+// GET user by ID
 // /api/users/:userId
-router.route('/:Id').get(getSingleUser).put(updateUser).delete(deleteUser);
+// router.route('/:id').get(getSingleUser)
+router.get('/:id', getSingleUser);
+// LOGIN user
+router.post('/login', loginUser);
 
-// DELETE, UPDATE user reservation
-// /api/users/:userId/reservations/:reservationId
-router
-  .route('/:id/reservations/:reservationId')
-  .put(updateUser)
-  .delete(cancelReservation);
+// UPDATE user by ID
+// router.route('/:id').put(updateUser)
+
+// DELETE user by ID
+// router.route('/:id').delete(deleteUser);
+
 
 module.exports = router;

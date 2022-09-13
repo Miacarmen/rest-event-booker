@@ -1,9 +1,17 @@
 const mongoose = require('mongoose');
 
-// Connect to MongoDB database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/eventbooker', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// Wrap Mongoose around local connection to MongoDB
+try {
+   mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/eventbookerDB',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
+} catch (error) {
+  console.error('Connection failed');
+}
 
+// Export connection
 module.exports = mongoose.connection;
