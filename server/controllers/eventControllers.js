@@ -1,16 +1,28 @@
+const { Event } = require('../models');
 
-// GET all events
-
-
-// GET single event by eventId
+// const tempEventData = require('../utils/eventData.json');
 
 
-// CREATE new event
+module.exports = {
+  // GET all events
+  // getEvents(req, res) {
+  //   res.status(200).json({ events: tempEventData });
+  // },
 
+  // GET single event by eventId
+  // getSingleEvent(req, res) {
+  //   const eventId = req.params.id;
+  //   const event = tempEventData.find(e => {
+  //     return e.id === eventId;
+  //   })
+  //   res.json({ event });
+  // },
 
-// UPDATE event by eventId
+  // CREATE new event
 
+  // UPDATE event by eventId
 
-// DELETE event by eventId
-// remove from all Users who booked
-// update those User's bookings data
+  // DELETE event by eventId
+  // remove from all Users who booked
+  // update those User's bookings data
+};

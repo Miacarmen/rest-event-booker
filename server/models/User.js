@@ -1,6 +1,7 @@
 // User has multiple reservations
-// firstName, lastName, username, email, password, [reservations]
+// firstName, lastName, email, password, [reservations]
 const { Schema, model } = require('mongoose');
+// const eventSchema = require('./Event');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
@@ -13,12 +14,6 @@ const userSchema = new Schema(
     lastName: {
       type: String,
       required: true,
-      trim: true,
-    },
-    username: {
-      type: String,
-      required: true,
-      unique: true,
       trim: true,
     },
     email: {
@@ -36,13 +31,11 @@ const userSchema = new Schema(
       required: true,
       mingLength: 8,
     },
-    // array of `_id` values referencing the `User` model (self-reference)
-    eventsBooked: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
+    // references the event schema
+    // eventsBooked: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Event',
+    // },
   },
   {
     // include virtuals with our response to override the default behavior
@@ -52,39 +45,26 @@ const userSchema = new Schema(
   }
 );
 
-// Create a virtual property `fullName` that gets and sets the user's full name
-userSchema
-  .virtual('fullName')
-  .get(() => {
-    return `${this.firstName} ${this.lastName}`;
-    // Setter to set the first and last name
-  })
-  .set((v) => {
-    const firstName = v.split(' ')[0];
-    const lastName = v.split(' ')[1];
-    this.set({ firstName, lastName });
-  });
-
 // Hash User Password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
-  next();
-});
+// userSchema.pre('save', async function (next) {
+//   if (this.isNew || this.isModified('password')) {
+//     const saltRounds = 10;
+//     this.password = await bcrypt.hash(this.password, saltRounds);
+//   }
+//   next();
+// });
 
 // Password Validation
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
+// userSchema.methods.isCorrectPassword = async function (password) {
+//   return bcrypt.compare(password, this.password);
+// };
 
-userSchema
-  .virtual('eventsBookedCount')
-  // retrieve length of user's `reservations` array field on query
-  .get(function () {
-    return this.eventsBooked.length;
-  });
+// userSchema
+//   .virtual('eventsBookedCount')
+//   // retrieve length of user's `reservations` array field on query
+//   .get(function () {
+//     return this.eventsBooked.length;
+//   });
 
 // Initialize our User model
 const User = model('User', userSchema);

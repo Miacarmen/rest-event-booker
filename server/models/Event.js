@@ -10,68 +10,77 @@ function parseDate(date) {
 
 const eventSchema = new Schema(
   {
-    eventId: {
-        type: Number,
-    },
+    // eventId: {
+    //   type: Number,
+    // },
     title: {
       type: String,
       required: true,
     },
     summary: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     description: {
       type: String,
       required: true,
     },
-    dates: {
-      type: Date,
+    days: {
+      type: String,
       required: true,
     },
-    startTime: {
+    duration: {
+      type: String,
+      required: true,
+    },
+    hours: {
+      type: String,
+      required: true,
+    },
+    price: {
       type: Number,
       required: true,
     },
-    endTime: {
-        type: Number,
-        required: true,
-      },
-    price: {
-        type: Number,
-        required: true,
-    },
-    // long and lat 
-    location: {
-      type: {
-        type: String,
-        enum: ['Point'], // location.type must be Point
-        required: true
-      },
-      coordinates: {
-        type: [Number],
-        required: true,
-      }
-    },
-    address: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: parseDate
-    },
+    // // long and lat
+    // location: {
+    //   type: {
+    //     type: String,
+    //     enum: ['Point'], // location.type must be Point
+    //     required: true
+    //   },
+    //   coordinates: {
+    //     type: [Number],
+    //     required: true,
+    //   }
+    // },
+    // address: {
+    //   type: String,
+    //   required: true,
+    // },
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now,
+    //   get: parseDate,
+    // },
     openings: {
-        type: Number,
+      type: Number,
     },
+    // references the User Schema
+    // bookings: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'User',
+    // },
     bookings: {
-        type: Number,
-        default: 0,
+      type: Number,
     },
-    image: {
+    imageURL: {
       type: String,
       required: true,
+    },
+  },
+  {
+    timestamps: {
+      createdAt: true,
     },
   },
   {
@@ -82,8 +91,8 @@ const eventSchema = new Schema(
   }
 );
 
-eventSchema.index({eventName: 'text', summary: 'text'});
-eventSchema.index({loc: '2dsphere'});
+eventSchema.index({ eventName: 'text', summary: 'text' });
+eventSchema.index({ loc: '2dsphere' });
 
 const Event = model('Event', eventSchema);
 

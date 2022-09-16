@@ -16,18 +16,19 @@ const {
 // GET all users
 // /api/users
 router.route('/').get(getUsers);
-// router.get('/', getUsers);
-
-// CREATE new user
-// router.route('/signup').post(createUser);
-router.post('/signup', createUser);
 
 // GET user by ID
 // /api/users/:userId
-// router.route('/:id').get(getSingleUser)
-router.get('/:id', getSingleUser);
+router.route('/:id').get(getSingleUser);
+
+
 // LOGIN user
-router.post('/login', loginUser);
+// router.route('/login').get(loginUser);
+
+// CREATE new user
+router.route('/signup').post(createUser);
+// router.post('/signup', createUser);
+
 
 // UPDATE user by ID
 // router.route('/:id').put(updateUser)

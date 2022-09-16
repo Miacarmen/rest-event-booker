@@ -4,9 +4,9 @@ const router = require('express').Router();
 const {
     getEvents,
     getSingleEvent,
-    createEvent,
-    updateEvent,
-    deleteEvent,
+    // createEvent,
+    // updateEvent,
+    // deleteEvent,
 } = require('../../controllers/eventControllers');
 
 // ROUTES
@@ -14,9 +14,12 @@ const {
 // GET all events
 // CREATE event
 // /api/events
-router.route('/').get(getEvents).post(createEvent);
+router.route('/').get(getEvents);
+// router.route('/').post(createEvent);
 
 // GET, UPDATE, DELETE event by ID
 // /api/events/:eventId
-router.route('/:eventId').get(getSingleEvent).put(updateEvent).delete(deleteEvent);
+router.route('/:eventId').get(getSingleEvent)
+// .put(updateEvent).delete(deleteEvent);
 
+module.exports = router;
