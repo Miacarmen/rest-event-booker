@@ -1,18 +1,11 @@
 // Event has:
 // multiple reservations/users
 
-// eventId, title, summary, description, dates, start time, end time, price, location(long, lat), address, image, timestamp, openings, bookings
+// title, summary, description, days, duration, hours,  price, address, image, openings, bookings
 const { Schema, model } = require('mongoose');
-
-function parseDate(date) {
-  return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-}
 
 const eventSchema = new Schema(
   {
-    // eventId: {
-    //   type: Number,
-    // },
     title: {
       type: String,
       required: true,
@@ -25,11 +18,11 @@ const eventSchema = new Schema(
       type: String,
       required: true,
     },
-    days: {
+    duration: {
       type: String,
       required: true,
     },
-    duration: {
+    days: {
       type: String,
       required: true,
     },
@@ -56,11 +49,6 @@ const eventSchema = new Schema(
     // address: {
     //   type: String,
     //   required: true,
-    // },
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    //   get: parseDate,
     // },
     openings: {
       type: Number,

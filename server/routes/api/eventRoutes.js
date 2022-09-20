@@ -4,7 +4,7 @@ const router = require('express').Router();
 const {
     getEvents,
     getSingleEvent,
-    // createEvent,
+    createEvent,
     // updateEvent,
     // deleteEvent,
 } = require('../../controllers/eventControllers');
@@ -15,7 +15,7 @@ const {
 // CREATE event
 // /api/events
 router.route('/').get(getEvents);
-// router.route('/').post(createEvent);
+router.route('/').post(createEvent);
 
 // GET, UPDATE, DELETE event by ID
 // /api/events/:eventId

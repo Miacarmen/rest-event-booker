@@ -29,16 +29,16 @@ module.exports = {
   //       res.status(200).json(result);
   //     });
   //   },
-    getSingleUser: async (req, res) => {
-      const userId = req.params.id;
-      let user;
-      try {
-        user = await User.findById(userId);
-      } catch (err) {
-        console.error(err, { message: 'No User found with that ID'});
-      }
-      res.json({ user });
-    },
+  getSingleUser: async (req, res) => {
+    const userId = req.params.id;
+    let user;
+    try {
+      user = await User.findById(userId);
+    } catch (err) {
+      console.error(err, { message: 'No User found with that ID' });
+    }
+    res.json({ user });
+  },
 
   // CREATE new user
   // createUser: (req, res) => {
@@ -74,6 +74,20 @@ module.exports = {
   createUser: async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
 
+    let existingUser;
+    // Check if email is already in database
+    try {
+      existingUser = await User.findOne({ email: email });
+    } catch (err) {
+      console.error(err, { message: 'Sign up failed, try again' });
+    }
+    // if email in db, throw error
+    if (existingUser) {
+      console.error(
+        'This email is already associated with an account, try another email'
+      );
+    }
+    // else create the new user and save to db
     const newUser = new User({
       id: uuidv4(),
       firstName,
