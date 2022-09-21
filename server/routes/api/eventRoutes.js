@@ -6,7 +6,7 @@ const {
     getSingleEvent,
     createEvent,
     // updateEvent,
-    // deleteEvent,
+    deleteEvent,
 } = require('../../controllers/eventControllers');
 
 // ROUTES
@@ -21,5 +21,6 @@ router.route('/').post(createEvent);
 // /api/events/:eventId
 router.route('/:eventId').get(getSingleEvent)
 // .put(updateEvent).delete(deleteEvent);
+router.route('/:eventId').delete(deleteEvent);
 
 module.exports = router;

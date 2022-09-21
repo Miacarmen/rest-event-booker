@@ -1,58 +1,92 @@
 const { Event } = require('../models');
 
-// const tempEventData = require('../utils/eventData.json');
-
-
 module.exports = {
   // GET all events
   getEvents(req, res) {
     Event.find({}, (err, result) => {
-      if(err) {
+      if (err) {
         console.log(err);
         return res.status(500).json({ message: `Failed to load data records` });
       }
       res.status(200).json(result);
-    })
+    });
   },
 
   // GET single event by eventId
-  // getSingleEvent(req, res) {
-  //   const eventId = req.params.id;
-  //   const event = tempEventData.find(e => {
-  //     return e.id === eventId;
-  //   })
-  //   res.json({ event });
-  // },
   getSingleEvent: async (req, res) => {
-    const eventId = req.params.id;
-    let event;
-    try {
-      event = await Event.findById(eventId);
-    } catch (err) {
-      console.log(err, { message: 'No Event found with that ID' });
-    }
-    res.json({ event });
+    Event.findOne({ _id: req.params.eventId })
+      .select('-__v')
+      .then((event) =>
+        !event
+          ? res.status(404).json({ message: 'No event with that ID' })
+          : res.json(event)
+      )
+      .catch((err) => res.status(500).json(err));
   },
 
   // CREATE new event
   createEvent: async (req, res) => {
-    const { title, summary, description, duration, days, hours, price, openings, bookings, imageURL } = req.body;
+    const {
+      title,
+      summary,
+      description,
+      duration,
+      days,
+      hours,
+      price,
+      openings,
+      bookings,
+      imageURL,
+    } = req.body;
+
+    let existingEvent;
+    // check if event already in database
+    try {
+      existingEvent = await Event.findOne({ title: title });
+    } catch (err) {
+      console.error(err, { message: 'Create Event Failed, try again' });
+    }
+
+    if (existingEvent) {
+      console.error('This event already exists');
+    }
 
     const newEvent = new Event({
-      title, summary, description, duration, days, hours, price, openings, bookings, imageURL
+      title,
+      summary,
+      description,
+      duration,
+      days,
+      hours,
+      price,
+      openings,
+      bookings,
+      imageURL,
     });
 
     try {
       await newEvent.save();
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-    res.status(201).json({ event: newEvent });
-  }
-
-  // UPDATE event by eventId
+    res.status(200).json({ messgae: 'New event created', event: newEvent });
+  },
 
   // DELETE event by eventId
+  deleteEvent: async (req, res) => {
+    let event;
+    try {
+      event = await Event.findOneAndDelete(req.params.eventId);
+      res.status(200).json({ message: 'Event successfully deleted' });
+    } catch (err) {
+      res.status(500).json({
+        message: 'Failed to delete event',
+      });
+    }
+  },
+
   // remove from all Users who booked
   // update those User's bookings data
+
+  // UPDATE event by eventId
 };
