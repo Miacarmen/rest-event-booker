@@ -14,9 +14,6 @@ module.exports = {
       res.status(200).json(result);
     });
   },
-  //   const getUsers = async (req, res) => {
-  //     const users = User
-  //   }
 
   // GET single user by ID
   // and populate with their associated reservations
@@ -30,14 +27,16 @@ module.exports = {
   //     });
   //   },
   getSingleUser: async (req, res) => {
-    const userId = req.params.id;
-    let user;
-    try {
-      user = await User.findById(userId);
-    } catch (err) {
-      console.error(err, { message: 'No User found with that ID' });
-    }
-    res.json({ user });
+    // const userId = req.params.id;
+    // let user;
+    // try {
+    //   user = await User.findById(userId);
+    // } catch (err) {
+    //   console.error(err, { message: 'No User found with that ID' });
+    // }
+    // res.json({ user });
+    User.findById({ _id: req.params.id }).select('-__v').then((user) => !user ? res.status(404).json({ message: 'No user found with that ID' }) : res.json(user))
+    .catch((err) => res.status(500).json(err, { message: 'Failed to load data records'}));
   },
 
   // CREATE new user

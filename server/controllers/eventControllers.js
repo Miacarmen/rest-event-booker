@@ -21,7 +21,9 @@ module.exports = {
           ? res.status(404).json({ message: 'No event with that ID' })
           : res.json(event)
       )
-      .catch((err) => res.status(500).json(err));
+      .catch((err) =>
+        res.status(500).json(err, { message: 'Failed to load data records' })
+      );
   },
 
   // CREATE new event
@@ -73,10 +75,12 @@ module.exports = {
   },
 
   // DELETE event by eventId
+  // remove from all Users who booked
+  // update those User's bookings data
   deleteEvent: async (req, res) => {
     let event;
     try {
-      event = await Event.findOneAndDelete(req.params.eventId);
+      event = await Event.findOneAndDelete({ _id: req.params.eventId });
       res.status(200).json({ message: 'Event successfully deleted' });
     } catch (err) {
       res.status(500).json({
@@ -85,8 +89,6 @@ module.exports = {
     }
   },
 
-  // remove from all Users who booked
-  // update those User's bookings data
-
   // UPDATE event by eventId
+  
 };
