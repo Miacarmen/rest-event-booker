@@ -8,7 +8,26 @@ body,
 }
 
 .wrapper {
-    min-height: 100vh;
-    margin: auto;
-    /* padding-bottom: 60px; */
-  }
+  min-height: 100vh;
+  margin: auto;
+  /* padding-bottom: 60px; */
+  position: relative;
+}
+
+.bgImg {
+  background-image: url(images/trans-pink.png);
+  /* background-color: rgba(0, 0, 0, 0.35); */
+  position: absolute;
+  top: 0;
+  left: 5;
+  width: 100%;
+  height: 100%;
+}
+
+.login-control {
+  border: 2px solid black;
+}
+
+.login-container {
+  border: 2px solid white;
+}

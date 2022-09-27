@@ -1,10 +1,9 @@
 import React from 'react';
-import SmButton from '../Buttons/SmButton';
 // on click of button, redirect to full page details of the clicked event
 
 // dynamically render image, title, and short description of event from the database
 
-const EventCard = () => {
+const HomeEventCard = () => {
   return (
     <div className='card w-96 bg-base-200 shadow-xl'>
       <figure>
@@ -17,11 +16,13 @@ const EventCard = () => {
         <h2 className='card-title'>Event Title</h2>
         <p>Event Description</p>
         <div className='card-actions justify-end'>
-          <SmButton />
+          <button className='btn btn-sm rounded-full border-none bg-neutral hover:bg-neutral-focus text-base-300'>
+            Learn More
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default EventCard;
+export default HomeEventCard;
