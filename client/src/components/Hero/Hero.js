@@ -17,7 +17,7 @@ const Hero = () => {
           <h1 className='text-5xl font-bold'>Welcome to Harp</h1>
           <p className='py-6 text-lg'>
             Find the perfect get aways and activities for you and the one you
-            love to enjoy some romantic 'just the two of you' time, that's so
+            love to enjoy some romantic 'just the two of us' time, that's so
             much more than dinner and a movie.
           </p>
           <Link to='/events'>
