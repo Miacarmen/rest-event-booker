@@ -23,7 +23,7 @@ router.route('/:id').get(getSingleUser);
 
 
 // LOGIN user
-// router.route('/login').get(loginUser);
+// router.route('/login').post(loginUser);
 
 // CREATE new user
 router.route('/signup').post(createUser);

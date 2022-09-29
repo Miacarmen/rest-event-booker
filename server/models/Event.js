@@ -6,6 +6,9 @@ const { Schema, model } = require('mongoose');
 
 const eventSchema = new Schema(
   {
+    eventId: {
+      type: Number,
+    },
     title: {
       type: String,
       required: true,
@@ -79,8 +82,8 @@ const eventSchema = new Schema(
   }
 );
 
-eventSchema.index({ eventName: 'text', summary: 'text' });
-eventSchema.index({ loc: '2dsphere' });
+// eventSchema.index({ eventName: 'text', summary: 'text' });
+// eventSchema.index({ loc: '2dsphere' });
 
 const Event = model('Event', eventSchema);
 

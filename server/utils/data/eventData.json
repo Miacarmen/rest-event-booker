@@ -14,7 +14,7 @@
   },
   {
     "eventId": 2,
-    "title": "Cooking Class for Couples",
+    "title": "Couples Romantic Cooking Class",
     "summary": "Homemade Ravioli Times Two",
     "description": "Join Chef Luana as she shares the artisanal art of ravioli making. From rolling and cutting to sealing the dough, this in-person cooking class will teach you how to prepare fresh ravioli from scratch. These handmade pasta puffs will be filled with spinach and ricotta cheese and pumpkin. Flavorful handmade Italian sauces include your choice of either fresh tomato sauce or butter and sage sauce. A heaping handful of Parmigiano Reggiano tops this delicious duo.",
     "days": "Fridays, Saturdays, Sundays",
@@ -36,7 +36,7 @@
     "price": 250,
     "openings": 6,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/2562096/pexels-photo-2562096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://i.ibb.co/bXXZ6nZ/My-project-4.jpg"
   },
   {
     "eventId": 4,
@@ -49,13 +49,13 @@
     "price": 125,
     "openings": 20,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/5689745/pexels-photo-5689745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://i.ibb.co/v4yB26J/My-project-8.jpg"
   },
   {
     "eventId": 5,
-    "title": "Helicopter Tour",
+    "title": "Romantic Helicopter Tour with Mountain Landing",
     "summary": "Peek into Beverly Hills and Hollywood from the comfort of a private helicopter. Soar past the iconic Hollywood Sign and enjoy the views on this helicopter tour",
-    "description": "Begin your tour at the world-class Burbank Airport, a stone`s throw from Universal and Warner Bros Studios. All guests are asked to arrive at least thirty minutes before the start of their tour in order to check-in with the flight team and get situated for their exclusive sightseeing experience. Your tour will pass right by the iconic Hollywood Sign, offering you an opportunity to snap a photo (or a selfie if you`re quick) from a vantage point view that few others get to see.",
+    "description": "Exciting and beautiful mountaintop helicopter tour takes you on a 45-minute flight over Los Angeles to a private peak overlooking the Malibu coastline. Then toast yourselves and enjoy a complimentary dessert overlooking the beautiful Pacific Ocean. From beautiful sunny Los Angeles, this private, 45-minute helicopter tour provides the perfect romantic getaway for two.The journey begins from the Bob Hope Airport in Burbank, and once you’re in the air, heads east over many of the iconic landmarks of Los Angeles, including Universal Studios, the famous Hollywood Sign, and some celebrity homes of Beverly Hills and Bel Air. You'll then head west to see the world-famous beaches of Santa Monica, and the Pacific Palisades, which offer breathtaking views of the stunning California Coastline. Continue up the coast and land at your own private and secluded plateau overlooking the magnificent shores of Malibu beach. At this point, you and your guest will have 30 minutes of time on the peak for a complimentary toast, a delicious dessert, and a rose to celebrate your special occasion",
     "days": "Wednesdays, Thursdays, Fridays, Saturdays",
     "duration": "30 minutes",
     "hours": "10:00 pm - 5:00 pm",
@@ -75,7 +75,7 @@
     "price": 120,
     "openings": 10,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/5713745/pexels-photo-5713745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://i.ibb.co/1vvccVf/My-project-2.jpg"
   },
   {
     "eventId": 7,
@@ -88,7 +88,7 @@
     "price": 100,
     "openings": 20,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/5713745/pexels-photo-5713745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://i.ibb.co/H79TqvH/My-project-3.jpg"
   },
   {
     "eventId": 8,
@@ -101,7 +101,7 @@
     "price": 125,
     "openings": 10,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/5713745/pexels-photo-5713745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://i.ibb.co/z20yyNv/My-project-1.png"
   },
   {
     "eventId": 9,
@@ -114,7 +114,7 @@
     "price": 450,
     "openings": 8,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/5713745/pexels-photo-5713745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://img.freepik.com/free-photo/portrait-attractive-couple-relaxing-spa-salon-with-hot-stones-body_186202-8641.jpg?w=1380&t=st=1663714905~exp=1663715505~hmac=a4035e2169719a03559a25cb60094c267767a9ce0f51cdd1e9223114bf4eb4e8"
   },
   {
     "eventId": 10,
@@ -127,6 +127,6 @@
     "price": 250,
     "openings": 12,
     "bookings": 0,
-    "imageURL": "https://images.pexels.com/photos/5713745/pexels-photo-5713745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "imageURL": "https://i.ibb.co/G7CdvPw/My-project-7.jpg"
   }
 ]

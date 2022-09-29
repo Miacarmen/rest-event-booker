@@ -2,14 +2,21 @@ const { Event } = require('../models');
 
 module.exports = {
   // GET all events
-  getEvents(req, res) {
-    Event.find({}, (err, result) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({ message: `Failed to load data records` });
-      }
-      res.status(200).json(result);
-    });
+  getEvents: async (req, res) => {
+    // Event.find({}, (err, result) => {
+    //   if (err) {
+    //     console.log(err);
+    //     return res.status(500).json({ message: `Failed to load data records` });
+    //   }
+    //   res.status(200).json(result);
+    // });
+    let events;
+    try {
+      events = await Event.find({});
+      res.status(200).json(events);
+    } catch (err) {
+      res.status(500).json(err, { message: 'Failed to load data records' });
+    }
   },
 
   // GET single event by eventId
