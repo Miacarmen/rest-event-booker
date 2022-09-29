@@ -57,7 +57,7 @@ Search by location, type of activity, or day of the week.
 
 ## Usage
 
-
+Explore activities on the event page. Filter your search based on your current location, type of activities (ex. outdoors, indoors, active, realxing, etc.). Create an account to book an activity directly through the app.
 
 ### Credits
 
