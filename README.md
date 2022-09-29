@@ -12,7 +12,9 @@
 
 ## Description
 
-Full MERN stack application created to explore and book events and activities for couples. Search by location, type of activity, or day of the week. 
+HARP is a full stack MERN application created to explore and book events and activities for couples who are tired of the dinner-and-a-movie date and want to look for ways to spice up their relationship and keep the romance alive. 
+
+Search by location, type of activity, or day of the week. 
 
 ## Deployed Site
 
