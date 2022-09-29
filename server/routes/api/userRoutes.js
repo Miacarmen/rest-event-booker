@@ -36,5 +36,4 @@ router.route('/signup').post(createUser);
 // DELETE user by ID
 // router.route('/:id').delete(deleteUser);
 
-
 module.exports = router;
