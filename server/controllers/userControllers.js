@@ -1,26 +1,19 @@
 const { User } = require('../models');
 const { v4: uuidv4 } = require('uuid');
-
+const bcrypt = require('bcrypt');
 // * TO-DO: populate users with associated reservations on query
+// * TO-DO: hash user passwords
 
 module.exports = {
   // GET all users
   getUsers: async (req, res) => {
-    
     let users;
     try {
-       users = await User.find({});
-       res.status(200).json(users);
+      users = await User.find({});
+      res.status(200).json(users);
     } catch (err) {
-        res.status(500).json({ message: 'Failed to load data records' });
+      res.status(500).json({ message: 'Failed to load data records' });
     }
-    // User.find({}, (err, result) => {
-    //   if (err) {
-    //     console.log(err);
-    //     return res.status(500).json({ message: 'Failed to load data records' });
-    //   }
-    //   res.status(200).json(result);
-    // });
   },
 
   // GET single user by ID
@@ -34,7 +27,6 @@ module.exports = {
       res.status(500).json({ message: 'No User found with that ID' });
     }
     res.status(200).json({ user });
-
   },
 
   // CREATE new user
@@ -46,13 +38,16 @@ module.exports = {
     try {
       existingUser = await User.findOne({ email: email });
     } catch (err) {
-      res.status(500).json({ message: 'Sign up failed, try again' });
+      return res.status(500).json({ message: 'Sign up failed, try again' });
     }
     // if email in db, throw error
     if (existingUser) {
-      res.status(500).json({ message: 
-        'This email is already associated with an account, try another email'
-    });
+      return res
+        .status(500)
+        .json({
+          message:
+            'This email is already associated with an account, try another email',
+        });
     }
     // else create the new user and save to db
     const newUser = new User({
@@ -65,14 +60,13 @@ module.exports = {
     try {
       await newUser.save();
     } catch (err) {
-      res.status(500).json(err);
+      return res.status(500).json(err);
     }
-
-    res.status(200).json({ user: newUser });
+    return res.status(200).json({ user: newUser });
   },
 
- // LOGIN user by ID
-// loginUser: async (req, res) => {
+  // LOGIN user by ID
+//   loginUser: async (req, res) => {
 //     const { email, password } = req.body;
 
 //     let existingUser;
@@ -80,14 +74,14 @@ module.exports = {
 //     try {
 //       existingUser = await User.findOne({ email: email });
 //     } catch (err) {
-//       res.status(500).json({ message: 'Login failed, try again' });
+//       return res.status(500).json({ message: 'Login failed, try again' });
 //     }
-
-//     if(!existingUser || existingUser.password !== password) {
-//         res.status(500).json({ message: 'Invalid credentials, please try again' });
+//     // if email not found in db OR entered password is incorrect
+//     if (!existingUser || existingUser.password !== password) {
+//       return res.status(4000).json({ message: 'Invalid credentials, please try again' });
 //     }
-//     res.status(200).json({ message: 'Logged in!' });
-// },
+//     return res.status(200).json({ message: 'Logged in!' });
+//   },
 
   // UPDATE user by ID
   // update bookings array if they book a new one
@@ -97,13 +91,13 @@ module.exports = {
   deleteUser: async (req, res) => {
     let user;
     try {
-      user = await User.findOneAndDelete({ _id: req.params.id });
-      
-      res.status(200).json({ message: 'User successfully deleted' });
+      user = await User.findOne({ _id: req.params.id });
+      user.delete();
     } catch (err) {
       res.status(500).json({
         message: 'Failed to delete user',
       });
     }
+    res.status(200).json({ message: 'User successfully deleted' });
   },
 };

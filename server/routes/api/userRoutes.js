@@ -10,7 +10,6 @@ const {
   cancelReservation,
 } = require('../../controllers/userControllers');
 
-
 // ROUTES
 
 // GET all users
@@ -21,19 +20,19 @@ router.route('/').get(getUsers);
 // /api/users/:userId
 router.route('/:id').get(getSingleUser);
 
-
 // LOGIN user
+// /api/users/login
 // router.route('/login').post(loginUser);
 
 // CREATE new user
+// /api/users/signup
 router.route('/signup').post(createUser);
-// router.post('/signup', createUser);
-
 
 // UPDATE user by ID
 // router.route('/:id').put(updateUser)
 
 // DELETE user by ID
-// router.route('/:id').delete(deleteUser);
+// /api/users/:id
+router.route('/:id').delete(deleteUser);
 
 module.exports = router;
