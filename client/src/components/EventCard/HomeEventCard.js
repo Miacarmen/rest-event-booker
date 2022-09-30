@@ -14,7 +14,7 @@ const HomeEventCard = () => {
       </figure>
       <div className='card-body'>
         <h2 className='card-title'>Event Title</h2>
-        <p>Event Description</p>
+        <p className='text-start'>Event Summary</p>
         <div className='card-actions justify-end'>
           <button className='btn btn-sm rounded-full border-none bg-neutral hover:bg-neutral-focus text-base-300'>
             Learn More
