@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-require("dotenv").config();
+const cors = require('cors');
 const mongoose = require('mongoose');
-// const db = require('./config/connection');
+require("dotenv").config();
 
 const userRoutes = require('./routes/api/userRoutes');
 const eventRoutes = require('./routes/api/eventRoutes');
@@ -10,10 +10,17 @@ const eventRoutes = require('./routes/api/eventRoutes');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+const corsOptions ={
+  origin:'http://localhost:3000', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
 // Middleware for parsing json data
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors(corsOptions));
+
 // Use Routes
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
