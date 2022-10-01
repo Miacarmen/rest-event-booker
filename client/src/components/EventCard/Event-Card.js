@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+
 import SmButton from '../Buttons/SmButton';
 // on click of button, redirect to full page details of the clicked event
 
@@ -7,13 +7,6 @@ import SmButton from '../Buttons/SmButton';
 // const baseURL = 'http://localhost:4000/api/events';
 
 const EventCard = ({ title, summary, imageURL }) => {
-  // const [eventData, setEventData] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get(baseURL).then((res) => {
-  //     setEventData(res.data);
-  //   })
-  // }, []);
 
   return (
     <div className='card w-96 bg-base-200 shadow-xl'>

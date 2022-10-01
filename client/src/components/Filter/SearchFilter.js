@@ -7,8 +7,8 @@ const SearchFilter = () => {
     <div className='flex-none'>
       <div className='form-control'>
         <div className='input-group'>
-          <select className='select select-bordered'>
-            <option disabled selected>
+          <select className='select select-bordered' defaultValue={""}>
+            <option disabled value="">
               Filter by...
             </option>
             <option>Location</option>

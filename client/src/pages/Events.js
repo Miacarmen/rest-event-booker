@@ -6,14 +6,15 @@ import EventCard from '../components/EventCard/Event-Card';
 import SearchBar from '../components/SearchBar/SearchBar';
 
 // TO-DO: map through events in database to create a card for each
-const baseURL = 'http://localhost:4000/api/events';
 
 const Events = () => {
   const [eventData, setEventData] = useState([]);
 
 useEffect(() => {
+  const baseURL = 'http://localhost:4000/api/events';
   axios.get(baseURL).then((res) => {
     setEventData(res.data);
+    console.log(res.data);
   })
 }, []);
 
@@ -25,7 +26,7 @@ useEffect(() => {
         <SearchBar />
         <div className='grid gap-8 grid-cols-1 lg:grid-cols-4 md:grid-cols-2 '>
           {eventData.map((event) => <EventCard 
-        key={event.id}
+        key={event._id}
         title={event.title}
         summary={event.summary}
         image={event.imageURL[0]}

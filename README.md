@@ -6,6 +6,7 @@
 - [Deployed Link](#deployed)
 - [Tools](#tools)
 - [Dependencies](#dependencies)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
@@ -54,6 +55,14 @@ Search by location, type of activity, or day of the week.
 - [daisyUI](https://daisyui.com/)
 - [Sweetalert](https://www.npmjs.com/package/sweetalert)
 
+
+## Installation
+
+1. Clone down the repo from the repository or by git clone git@github.com:Miacarmen/rest-event-booker.git in your terminal
+2. To get all necessary packages, run `npm install` in the command line
+3. From the root directory, run `npm run develop` to get the program to concurrently run the front and back end of the web application.
+
+***Please note Node.js is required for this application to run locally***
 
 ## Usage
 
