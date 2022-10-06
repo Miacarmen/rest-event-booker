@@ -10,6 +10,7 @@ import Events from './pages/Events';
 import UserDash from './pages/UserDash';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/dashboard' element={<UserDash />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
             <Route path='*' element={<p>Page Not Found</p>} />
           </Routes>
         </div>

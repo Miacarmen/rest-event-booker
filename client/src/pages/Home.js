@@ -7,9 +7,10 @@ import ImgCarousel from '../components/Carousel/Carousel';
 import pinkRoses from '../images/trans-pink.png';
 
 const HomePage = () => {
+
   return (
     <div
-      className='bg-base-100'
+      className='bg-base-100 imgContainer'
       style={{
         backgroundImage: `url(${pinkRoses})`,
       }}

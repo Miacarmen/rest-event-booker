@@ -37,11 +37,11 @@ const Nav = () => {
           </div>
         </div>
         <div className='navbar-end'>
-          {/* <NavLink to='/login'> */}
+          <NavLink to='/login'>
           <button className='btn-sm rounded-full bg-neutral border-none text-base-300 hover:bg-neutral-focus'>
             Login
           </button>
-          {/* </NavLink> */}
+          </NavLink>
         </div>
       </div>
     </>

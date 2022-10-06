@@ -1,3 +1,8 @@
+.imgContainer {
+    background-size: cover;
+    background-position: center center;
+}
+
 .hero-content {
     -webkit-animation-duration:1s;
     animation-duration:1.5s;
@@ -33,3 +38,10 @@
     -webkit-animation-name:fadeInLeft;
     animation-name:fadeInLeft
 }
+
+
+/* @media only screen and (max-width: 767px) {
+    .imgContainer {
+        background-size: contain;
+    }
+} */
