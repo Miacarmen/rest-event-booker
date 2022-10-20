@@ -6,6 +6,7 @@ module.exports = {
     let events;
     try {
       events = await Event.find({});
+    
       res.status(200).json(events);
     } catch (err) {
       res.status(500).json(err, { message: 'Failed to load data records' });
@@ -38,7 +39,7 @@ module.exports = {
       price,
       openings,
       bookings,
-      imageURL,
+      image,
     } = req.body;
 
     let existingEvent;
@@ -63,7 +64,7 @@ module.exports = {
       price,
       openings,
       bookings,
-      imageURL,
+      image,
     });
 
     try {
@@ -98,8 +99,7 @@ module.exports = {
         res.sendStatus(404);
         return;
       }
-      event.title = req.body.title;
-      event.title = req.body.title;
+      event.image = req.body.image;
       await event.save();
       res.sendStatus(200);
     } catch (err) {

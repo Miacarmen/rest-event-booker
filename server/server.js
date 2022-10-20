@@ -17,6 +17,7 @@ const corsOptions ={
 }
 // Middleware for parsing json data
 app.use(bodyParser.json());
+// parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors(corsOptions));

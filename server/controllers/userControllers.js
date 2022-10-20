@@ -1,6 +1,7 @@
 const { User } = require('../models');
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 // * TO-DO: populate users with associated reservations on query
 // * TO-DO: hash user passwords
 
@@ -66,22 +67,22 @@ module.exports = {
   },
 
   // LOGIN user by ID
-//   loginUser: async (req, res) => {
-//     const { email, password } = req.body;
+  loginUser: async (req, res) => {
+    const { email, password } = req.body;
 
-//     let existingUser;
-//     // Check if email is already in database
-//     try {
-//       existingUser = await User.findOne({ email: email });
-//     } catch (err) {
-//       return res.status(500).json({ message: 'Login failed, try again' });
-//     }
-//     // if email not found in db OR entered password is incorrect
-//     if (!existingUser || existingUser.password !== password) {
-//       return res.status(4000).json({ message: 'Invalid credentials, please try again' });
-//     }
-//     return res.status(200).json({ message: 'Logged in!' });
-//   },
+    let existingUser;
+    // Check if email is already in database
+    try {
+      existingUser = await User.findOne({ email: email });
+    } catch (err) {
+      return res.status(500).json({ message: 'Login failed, try again' });
+    }
+    // if email not found in db OR entered password is incorrect
+    if (!existingUser || existingUser.password !== password) {
+      return res.status(4000).json({ message: 'Invalid credentials, please try again' });
+    }
+    return res.status(200).json({ token: jwt.sign({ email: existingUser.email, _id: existingUser._id }, 'Logged in!') });
+  },
 
   // UPDATE user by ID
   // update bookings array if they book a new one

@@ -4,7 +4,7 @@ import EventCard from '../components/EventCard/Event-Card';
 
 // Components
 import SearchBar from '../components/SearchBar/SearchBar';
-
+import Paginate from '../components/Buttons/Paginate';
 // TO-DO: map through events in database to create a card for each
 
 const Events = () => {
@@ -32,7 +32,9 @@ const Events = () => {
             />
           ))}
         </div>
+        <Paginate />
       </div>
+      
     </div>
   );
 };

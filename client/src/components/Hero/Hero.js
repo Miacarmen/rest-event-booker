@@ -13,7 +13,7 @@ const Hero = () => {
       //   backgroundImage: `url(${pinkRoses})`,
       // }}
     >
-      <div className='hero-content text-center mb-56 fadeInLeft'>
+      <div className='hero-content text-center mb-64 fadeInLeft'>
         <div className='max-w-md'>
           <h1 className='text-5xl font-bold'>Welcome to Harp</h1>
           <p className='py-6 text-lg'>

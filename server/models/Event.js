@@ -64,10 +64,9 @@ const eventSchema = new Schema(
     bookings: {
       type: Number,
     },
-    imageURL: {
+    image: {
       type: String,
       required: true,
-      // data: Buffer, contentType: String
     },
   },
   {

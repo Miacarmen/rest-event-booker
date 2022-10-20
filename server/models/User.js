@@ -32,6 +32,9 @@ const userSchema = new Schema(
       required: true,
       mingLength: 8,
     },
+    role: {
+        type: String
+    }
     // references the event schema
     // eventsBooked: {
     //   type: Schema.Types.ObjectId,
